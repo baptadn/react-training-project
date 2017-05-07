@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "babel": "babel src -d build",
-    "build": "webpack src/index.js build/bundle.js"
+    "build": "webpack"
   },
   "dependencies": {
     "react": "^15.5.4"
