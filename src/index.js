@@ -1,8 +1,3 @@
-class HelloWorld {
-  say(message) {
-    console.log(message);
-  }
-}
+import React from 'react';
 
-var helloWorld = new HelloWorld();
-helloWorld.say('hello');
+console.log('Hello React app');
