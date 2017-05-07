@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:shinework/react-training-project.git",
-  "author": "shinework <adrien.baptiste@gmail.com>",
-  "license": "MIT"
+  "author": "shinework <badrien@jolicode.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.24.1"
+  }
 }
