@@ -10,6 +10,7 @@
     "build": "webpack"
   },
   "dependencies": {
+    "babel-loader": "^7.0.0",
     "react": "^15.5.4"
   },
   "devDependencies": {

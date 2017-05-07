@@ -1,3 +1,10 @@
 import React from 'react';
 
-console.log('Hello React app');
+class HelloWorld {
+  say(message) {
+    console.log(message);
+  }
+}
+
+var helloWorld = new HelloWorld();
+helloWorld.say('Hello React app');
