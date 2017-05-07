@@ -5,6 +5,9 @@
   "repository": "git@github.com:shinework/react-training-project.git",
   "author": "shinework <badrien@jolicode.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "babel src -d build"
+  },
   "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.24.1"
