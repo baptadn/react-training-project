@@ -7,4 +7,4 @@ class HelloWorld {
 }
 
 var helloWorld = new HelloWorld();
-helloWorld.say('Hello React app');
+helloWorld.say('Hello React app !!');
