@@ -1,23 +1,13 @@
-import React, {Component} from 'react';
+import React from 'react';
 import MessageItem from './MessageItem';
 
-class MessageList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {messages: [
-      {body: 'Qui à faim ?', username: 'shinework'},
-      {body: 'Moi on mange où ?', username: 'babar'},
-      {body: 'Je ne sais pas :(', username: 'bob'},
-    ]};
-  }
-
-  render() {
-    return (<ul style={{borderColor: 'grey', padding: 10, listStyle: 'none'}}>
-      {this.state.messages.map((message, i) => {
-        return <MessageItem key={i} message={message} />
-      })}
-    </ul>)
-  }
+const MessageList = ({messages}) => {
+  return (<ul style={{borderColor: 'grey', padding: 10, listStyle: 'none'}}>
+    {messages.map((message, i) => {
+      return <MessageItem key={i} message={message} />
+    })}
+    {messages.length === 0 && <li>Pas de message 🎈</li>}
+  </ul>)
 }
 
 export default MessageList;
