@@ -1,12 +1,17 @@
-import React, {Component} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const MessageList = () => {
+const MessageList = ({message}) => {
   return (
     <li style={{ marginBottom: 10, backgroundColor: 'white', padding: 10, borderRadius: 10}}>
-      <small>@username</small>
-      <div>Message item</div>
+      <small>@{message.username}</small>
+      <div>{message.body}</div>
     </li>
   );
 }
+
+MessageList.propTypes = {
+  message: PropTypes.object.isRequired,
+};
 
 export default MessageList;
