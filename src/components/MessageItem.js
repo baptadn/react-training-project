@@ -1,20 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Emojione } from 'react-emoji-render';
+import { removeMessage } from './../actions/messages';
+import {connect} from 'react-redux';
 
-
-
-const MessageList = ({message}) => {
+const MessageItem = ({message, onRemoveMessage, index}) => {
   return (
-    <li style={{ marginBottom: 10, backgroundColor: 'white', padding: 10, borderRadius: 10}}>
+    <li style={{position: 'relative', marginBottom: 10, backgroundColor: 'white', padding: 10, borderRadius: 10}}>
       <small>@{message.username}</small>
-      <div><Emojione text={message.body} /></div>
+      <div><Emojione text={message.message} /></div>
+      <small onClick={() => onRemoveMessage(index)} style={{position: 'absolute', right: 10, top: 5, cursor: 'pointer'}}>❌</small>
     </li>
   );
 }
 
-MessageList.propTypes = {
-  message: PropTypes.object.isRequired,
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onRemoveMessage: index => {
+      dispatch(removeMessage(index))
+    }
+  }
 };
 
-export default MessageList;
+export default connect(null, mapDispatchToProps)(MessageItem);
