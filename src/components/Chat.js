@@ -7,7 +7,7 @@ const chatStyle = {borderRadius: 10, fontFamily: 'Montserrat', width: 400, backg
 const Chat = () => {
     return (
       <div style={chatStyle}>
-        <div style={{paddingLeft: 10, paddingTop: 10, fontSize: 30}}>👅 Joli</div>
+        <div style={{paddingLeft: 10, paddingTop: 10, fontSize: 30}}>👅 JoliChat</div>
         <MessageList />
         <MessageBar />
       </div>
