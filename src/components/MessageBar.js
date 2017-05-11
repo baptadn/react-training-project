@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {addMessage} from './../actions/messages';
+import {sendMessage} from './../actions/messages';
 
 const inputStyle = {borderRadius: 10, border: 'none', fontSize: 16, padding: 10, marginRight: 10, flexGrow: 1};
 const buttonStyle = {borderRadius: 10, cursor: 'pointer', fontSize: 20, color: '#336E7B', fontWeight: 'bold', padding: 10, flexGrow: 1, border: '3px solid #336E7B', backgroundColor: 'transparent'};
@@ -23,7 +23,7 @@ class MessageBar extends Component {
     e.preventDefault();
 
     if (this.state.message !== '') {
-      this.props.onAddMessage(this.state.message, 'shinework');
+      this.props.sendMessage(this.state.message, 'shinework');
       this.setState({ message: '' });
     }
   }
@@ -41,8 +41,8 @@ class MessageBar extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onAddMessage: (message, username) => {
-      dispatch(addMessage(message, username))
+    sendMessage: (message, username) => {
+      dispatch(sendMessage(message, username))
     }
   }
 };

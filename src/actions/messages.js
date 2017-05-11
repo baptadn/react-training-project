@@ -1,6 +1,15 @@
 import React from 'react';
-import axios from 'axios';
+import firebase from './../services/firebase'
 import * as action from '../constants/action';
+
+export const sendMessage = (message, username) => {
+  firebase.database().ref('messages').push({
+    message,
+    username,
+  });
+
+  return {type: action.SEND_MESSAGE_ACTION};
+};
 
 export const addMessage = (message, username) => {
   return {
@@ -18,17 +27,16 @@ export const removeMessage = index => {
 };
 
 export const loadMessages = () => {
-  return (dispatch) => {
+  return dispatch => {
     dispatch({type: action.LOAD_MESSAGES_PENDING_ACTION});
 
-    return axios.get('http://www.mocky.io/v2/5914c6af100000ae0f9a5c1a')
-      .then(response => {
-        dispatch({
-          type: action.LOAD_MESSAGES_SUCCESS_ACTION,
-          messages: response.data.messages
-        });
-      }).catch(error => {
-        dispatch({type: action.LOAD_MESSAGES_ERROR_ACTION, error: error});
-      });
-  };
-};
+    firebase.database().ref('/messages').once('value').then(snapshot => {
+      dispatch({
+        type: action.LOAD_MESSAGES_SUCCESS_ACTION,
+        messages: Object.values(snapshot.val()),
+      })
+    }).catch(error => {
+      dispatch({type: action.LOAD_MESSAGES_ERROR_ACTION, error: error});
+    });
+  }
+}
