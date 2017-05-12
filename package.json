@@ -6,8 +6,7 @@
   "author": "shinework <badrien@jolicode.com>",
   "license": "MIT",
   "scripts": {
-    "babel": "babel src -d build",
-    "build": "webpack",
+    "build": "export NODE_ENV=production && webpack --progress --profile --colors",
     "start": "webpack-dev-server --open"
   },
   "dependencies": {
