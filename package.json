@@ -14,10 +14,6 @@
     "axios": "^0.16.1",
     "babel-loader": "^7.0.0",
     "firebase": "^3.9.0",
-<<<<<<< Updated upstream
-=======
-    "lodash": "^4.17.4",
->>>>>>> Stashed changes
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-color": "^2.11.7",
@@ -25,10 +21,7 @@
     "react-emoji-render": "^0.3.4",
     "react-redux": "^5.0.4",
     "redux": "^3.6.0",
-<<<<<<< Updated upstream
-=======
     "redux-persist": "^4.8.0",
->>>>>>> Stashed changes
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {

@@ -7,12 +7,7 @@ import reducers from './reducers/index';
 import thunk from 'redux-thunk';
 import {persistStore, autoRehydrate} from 'redux-persist'
 
-const store = createStore(reducers, compose(
-  applyMiddleware(thunk),
-  autoRehydrate(),
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  )
-);
+const store = createStore(reducers, compose(applyMiddleware(thunk), autoRehydrate()));
 
 persistStore(store, {whitelist: ['settings']});
 
