@@ -1,17 +1,22 @@
-import React, {Component} from 'react';
-import MessageList from './MessageList';
+import React from 'react';
+import MessageListContainer from './../containers/MessageListContainer';
 import MessageBar from "./MessageBar";
+import { TwitterPicker } from 'react-color';
 
-const chatStyle = {borderRadius: 10, fontFamily: 'Montserrat', width: 400, backgroundColor: '#A2DED0', padding: 10, display: 'flex', flexDirection: 'column'};
+const chatStyle = {borderRadius: 10, fontFamily: 'Montserrat', width: 400, padding: 10, display: 'flex', flexDirection: 'column'};
 
-const Chat = () => {
-    return (
-      <div style={chatStyle}>
-        <div style={{paddingLeft: 10, paddingTop: 10, fontSize: 30}}>👅 JoliChat</div>
-        <MessageList />
-        <MessageBar />
-      </div>
+export default props => {
+  return (
+    <div style={{...chatStyle, backgroundColor: props.colorCode}}>
+      <div style={{paddingLeft: 10, paddingTop: 10, fontSize: 30}}>👅 JoliChat</div>
+
+      <MessageListContainer />
+      <MessageBar />
+
+      <TwitterPicker
+        onChangeComplete={color => props.updateChatColor(color.hex)}
+      />
+
+    </div>
     )
 }
-
-export default Chat;

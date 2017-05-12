@@ -8,7 +8,7 @@ const MessageItem = ({message, onRemoveMessage, index}) => {
     <li style={{position: 'relative', marginBottom: 10, backgroundColor: 'white', padding: 10, borderRadius: 10}}>
       <small>@{message.username}</small>
       <div><Emojione text={message.message} /></div>
-      <small onClick={() => onRemoveMessage(index)} style={{position: 'absolute', right: 10, top: 5, cursor: 'pointer'}}>❌</small>
+      {/*<small onClick={() => onRemoveMessage(index)} style={{position: 'absolute', right: 10, top: 5, cursor: 'pointer'}}>❌</small>*/}
     </li>
   );
 }

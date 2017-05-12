@@ -2,6 +2,8 @@ import React from 'react';
 import * as actions from './../constants/action';
 
 const INITIAL_STATE = {
+  isPending: false,
+  error: null,
   messages: [],
   pending: false,
 };
@@ -20,6 +22,15 @@ const messages = (state = INITIAL_STATE, action) => {
 
     case actions.LOAD_MESSAGES_ERROR_ACTION:
       return {...state, pending: false};
+
+    case actions.LOAD_MESSAGES_PENDING:
+        return {...state, isPending: true};
+
+    case actions.LOAD_MESSAGES_SUCCESS:
+        return {...state, isPending: false, messages: action.messages , error: null};
+
+    case actions.LOAD_MESSAGES_ERROR:
+        return {...state, isPending: false, error: action.error};
 
     case actions.ADD_MESSAGE_ACTION:
       return {

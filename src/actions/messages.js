@@ -19,6 +19,17 @@ export const addMessage = (message, username) => {
   };
 };
 
+export const sendFirebaseMessage = (message, username) => {
+  firebase.database().ref('messages').push({
+    message,
+    username,
+  });
+
+  return {
+    type: action.SEND_FIREBASE_MESSAGE,
+  };
+};
+
 export const removeMessage = index => {
   return {
     type: action.REMOVE_MESSAGE_ACTION,
