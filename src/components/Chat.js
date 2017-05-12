@@ -13,9 +13,9 @@ export default props => {
       <MessageListContainer />
       <MessageBar />
 
-      <TwitterPicker
-        onChangeComplete={color => props.updateChatColor(color.hex)}
-      />
+      <div style={{padding: 10}}>
+        <TwitterPicker onChangeComplete={color => props.updateChatColor(color.hex)} />
+      </div>
 
     </div>
     )
